@@ -3,32 +3,66 @@ let assert = require('assert')
 // Question One:
 
 // Write a function called double that doubles a number
+function double (num) {
+return num = num*2
+}
 
 // Uncomment out the next line to test your solution
-// runQ1Tests()
+//runQ1Tests()
 
 // Question Two:
 
 // Write a function called containsSeven that returns whether or not a number has an sevens in it.
+function containsSeven (num) {
+  return num.toString().includes("7") 
+    
+  
+}
 
 // Uncomment out the next line to test your solution
-// runQ2Tests()
+//runQ2Tests()
 
 // Question Three:
 
 // Write a function called capitalizeTheAs the capitalizes all of the lowercase "a"s in a string leaving all other characters the same
-
+function capitalizeTheAs (str) {
+  let strNew = ""
+  for (i = 0; i < str.length; i++) {
+    if (str[i] === "a") {
+     strNew += str[i].toUpperCase()
+  
+    } else {
+     strNew += str[i]
+  
+    }
+  }
+  return strNew
+}
 // Uncomment out the next line to test your solution
 // runQ3Tests()
 
 // Question Four:
 // Write a function called largest that returns the largest value in an array
+function largest (arr) {
+  let bigOne = []
+  bigOne = arr.sort((a,b) => {
+    return b-a
+  })
+  return bigOne[0]
+}
 
 // Uncomment out the next line to test your solution
 // runQ4Tests()
 
 // Question Five:
 // Write a function called average that returns the average of an array
+function average (arr) {
+  let total = 0
+  for (i = 0; i < arr.length; i++) {
+    total += arr[i]
+  }
+  return total / arr.length
+}
 
 // Uncomment out the next line to test your solution
 // runQ5Tests()
@@ -36,17 +70,44 @@ let assert = require('assert')
 // Question Six:
 // Write a function called mode that returns the most frequently occurring number in an array
 // HINT: Use an object where the keys are the numbers, and the values are how many times they appear in the array.
+function mode (array) {
+ 
+  let common = {}
+  for (i = 0; i < array.length; i++) {
+  if (common[array[i]] === undefined) {
+      
+       common[array[i]] = 1
+     
+  } else {
+      common[array[i]] += 1
+  }
+// made object, now need to find key with biggest value
+  }
 
+}
 // Uncomment out the next line to test your solution
-// runQ6Tests()
+//runQ6Tests()
 
 // Question Seven: (BONUS)
 // Write a function called median that returns the most median number in an array
 // HINT: You'll need to sort the array first
 // This one's also a bit tricky, feel free to skip it and come back to it.
+function median (arr) {
+  // let sorted = arr.sort((a,b) => {
+  //   return a-b
+  // })
+  // let middle = 0
+  // if (sorted.length % 2 === 0) {
+  //   middle = sorted[sorted.length / 2]
+  // } else {
+  //   middle = sorted[(sorted.length-1) /2]
+  // }
+  
+  // return middle 
+}
 
 // Uncomment out the next line to test your solution
-// runQ7Tests()
+ // runQ7Tests()
 
 // Question Eight:
 // Write a function called addAllStudents that takes in an array of Classroom objects (described below) and returns the total number of students
